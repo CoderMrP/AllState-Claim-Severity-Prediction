@@ -1,71 +1,88 @@
-Machine Learning Nano Degree Capstone Project
+Machine Learning Nanodegree Capstone Project
+Allstate Claim Severity Prediction
 
-Project: AllState Claim Severity
+📌 Project Overview
+This project is based on the Kaggle competition “Allstate Claims Severity”, which focuses on predicting the severity of insurance claims using supervised machine learning regression techniques.
+The objective is to predict a continuous target variable (loss) based on a high-dimensional dataset consisting of both categorical and numerical features. Accurate claim severity prediction enables insurance companies to improve risk assessment, pricing strategies, and financial planning.
 
-This project is competition from kaggle 'AllState Claim Severity' predictive modelling challenge. Goal of this project is to predict severity of Claim based on Loss value. Predicting numeric Loss values from given set of Claim features is task of Regression problem in ML. So, there are several Supervised ML Regression techniques or approach which can be used as solution to this problem domain.
+🧠 Problem Statement
+Given a set of claim-related features, predict the expected loss amount for each insurance claim.
+This is formulated as a regression problem.
 
-Install
+🛠️ Tech Stack
+Python 3
+Google Colab (cloud-based execution)
+NumPy
+Pandas
+Matplotlib
+Seaborn
+Scikit-learn
+XGBoost
+Keras
+SciPy
 
-This project requires Python 3 with GPU Hardware accelerator(for enchanced performance) and the following Python libraries installed:
+📊 Dataset
+The dataset is sourced from the Kaggle competition:
+Allstate Claims Severity
+https://www.kaggle.com/competitions/allstate-claims-severity
+Dataset Characteristics
+Total features: 131
+Continuous features: 14 (cont1 – cont14)
+Categorical features: 116 (cat1 – cat116)
+Target variable: loss
+Identifier: id
+The training dataset contains labeled loss values, while the test dataset does not include the target variable.
 
-[NumPy]
+🔄 Data Preprocessing
+To handle the complexity and dimensionality of the dataset, the following preprocessing steps were applied:
+Handling high-cardinality categorical features
+Dimensionality reduction using PCA
+Log transformation of the target variable to normalize distribution
+Feature scaling and preparation for model training
 
-[Pandas]
+📈 Exploratory Data Analysis
+Feature correlations were explored using Seaborn heatmaps
+Relationships between numerical variables were analyzed using scatter matrix plots
+Distribution patterns of the target variable were examined to guide transformations
 
-[matplotlib]
+🤖 Models Implemented
+The following supervised regression models were trained and evaluated:
+Decision Tree Regressor
+XGBoost Regressor
+Deep Neural Network (Keras)
+Each model was trained using 90% of the training data, with 10% held out for validation.
 
-[scikit-learn]
+📏 Model Evaluation
+Evaluation Metric: Mean Absolute Error (MAE)
+MAE was used to measure the average difference between predicted and actual loss values
+The final model was selected based on lowest validation MAE
+Note: Kaggle test data does not contain true loss values, so MAE cannot be computed on the test set.
 
-[seaborn]
+🏆 Results
+MAE scores from all three models were compared
+The model with the best MAE performance was selected as the final solution
+Results demonstrate the effectiveness of tree-based and ensemble models for structured insurance data
 
-[keras]
+📁 Project Structure
+├── notebooks/          # Jupyter notebooks for EDA and model training
+├── artifacts/          # Saved models and preprocessing artifacts
+├── raw_code/           # Experimental and trial implementations
+├── requirements.txt    # Python dependencies
+└── README.md
 
-[xgboost]
+💡 Business Relevance
+Accurate claim severity prediction helps insurers:
+Improve underwriting decisions
+Optimize reserve allocation
+Reduce financial risk
+Enhance pricing strategies
 
-[scipy] Code implementation for this project is done on google colab cloud environment.
-
-Data
-
-Train and Test data for this project can be referenced from kaggle competitionAllstate Claims Severity Repo. Train and Test
-
-has 131 features with 14 continuous and 116 categorical. Loss target value is given for each row in Train data for Supervise Regression training. 'Id' Columns refers to unique row key for each claim row. Features
-
-Cont1...Cont14: Represents 14 continuous numeric features;
-
-Cat1...Cat116: Represents 116 categorical features with type string;
-
-loss: Represents target numeric feature;
-
-Id: Represents unique row Id for each Claim row;
-
-Data Preprocessing and Visualization
-
-Data visualization is done using seaborn heatmap and pandas scatter matrix to visualization correlation among features.
-
-seaborn heatmaps
-pandas scatter matrix
-Data Preprocessing is done using PCA to reduce dimensioanlity of data and transformation is done to log scale to achieve normal distribution.
-
-Principal Component Analysis
-Log transform
-Implementation
-
-Three ML approaches discussed and implemented in this project:
-
-DecisionTreeRegressor
-XGBRegressor
-Deep Neural Network using Keras
-Model Evaluation and Validation
-
-Model is tested on 10% of train data splitted from orginial train data in ratio of 9:1. Remaining 90% of train data is used for model training and validation.Metric used to measure performance of model is Mean Absolute error (MAE). Goal of all three ML approches implemented is to reduce MAE. MAE is average over difference between predicted and actual loss on test data. Please note that test data provided in kaggle competition do not have true loss values so MAE cannot be computed on that but free form visualization is done to understand Loss pattern predicted from test data and true values from train data.
-
-Results
-
-MAE score from all three implementations are reported and final model is chosen with best MAE score.
-
-Problem Domain
-
-Some of the references for predictive modeling on Claim Severity:
+📚 References
 https://riskandinsurance.com/georgia-pacific/
 https://www.investopedia.com/terms/a/average-severity.asp
 https://www.casact.org/pubs/forum/05spforum/05spf215.pdf
+
+👤 Author
+Paras Saini
+MSc Data Analytics
+Machine Learning & Data Science Enthusiast
